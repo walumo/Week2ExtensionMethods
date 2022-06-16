@@ -73,9 +73,9 @@ namespace Game
     //Extension method as per requested
     public static class MyExtension
     {
-        public static void GivePrize(this bool hasWon)
+        public static void GivePrize(this Raffle raffle)
         {
-            if (hasWon) Console.WriteLine("You won 3 million alpacas!");
+            if (raffle.victory) Console.WriteLine("You won 3 million alpacas!");
             else Console.WriteLine("You != winner...");
         }
     }
@@ -90,9 +90,9 @@ namespace Game
 
             lotto.Welcome();
             lotto.Play();
-            
+
             //Extension method in use
-            lotto.victory.GivePrize();   
+            lotto.GivePrize();
           
 
             Console.WriteLine("*********************************");
