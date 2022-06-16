@@ -39,6 +39,7 @@ namespace Game
                 this.victory = false;
             }
         }
+        //GetResult overload for additional task
         void GetResult(int guess = 0)
         {
             var rand = new Random().Next(10);
@@ -57,7 +58,7 @@ namespace Game
 
         // play the game
         public void Play()
-        {
+        { //I lazily refactored this method to work with new game logic..
             Console.Write("Enter number between 1 and 10: ");
             int userInput = Convert.ToInt32(Console.ReadLine());
             //Console.ReadKey(true);
@@ -69,6 +70,7 @@ namespace Game
 
         
     }
+    //Extension method as per requested
     public static class MyExtension
     {
         public static void GivePrize(this bool hasWon)
@@ -89,7 +91,8 @@ namespace Game
             lotto.Welcome();
             lotto.Play();
             
-            lotto.victory.GivePrize();           
+            //Extension method in use
+            lotto.victory.GivePrize();   
           
 
             Console.WriteLine("*********************************");
